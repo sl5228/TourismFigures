@@ -5,8 +5,8 @@
 \begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-    width=12cm,
-    height=8cm,
+    width=10cm,
+    height=6cm,
     ybar stacked,
     bar width=0.6cm,
     xlabel={Year},
@@ -18,7 +18,7 @@
     ymax=80,
     xtick={2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029},
     xticklabels={2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029},
-    legend style={at={(0.02,0.98)}, anchor=north west},
+    legend style={at={(0.5,-0.35)}, anchor=north, legend columns=2},
     grid=major,
     grid style={gray!30},
     x tick label style={rotate=45, anchor=east},
@@ -36,9 +36,9 @@
     (2024,12.9) (2025,12.1) (2026,12.5) (2027,13.2) (2028,13.9) (2029,14.6)
 };
 
-% Horizontal dashed line for 2019 total visitation level
-\draw[dashed, thick, color=black] (axis cs:2018.5,66) -- (axis cs:2029.5,66);
-\node[anchor=south] at (axis cs:2024,66.5) {2019 Total Visitation Level (66M)};
+% Horizontal dashed line for 2019 total visitation level (drawn on top)
+\draw[dashed, thick, color=black, on layer=axis foreground] (axis cs:2018.5,66.6) -- (axis cs:2029.5,66.6);
+\node[anchor=south, on layer=axis foreground] at (axis cs:2024,67.1) {2019 Total Visitation Level (66.6M)};
 
 \legend{Domestic Visitors, International Visitors}
 
